@@ -14,7 +14,7 @@ const E_LOGIN = () => {
       </View>
 
       <View style={{ height: '40%', width: '100%', backgroundColor: '#F5F5F5F5' }}>
-        <E_BODY />
+        {page === SIGN_IN ? <E_BODY /> : null}
       </View>
 
       <View style={{ flex: 1, height: '40%', width: '100%', backgroundColor: '#F5F5F5F5' }}>
