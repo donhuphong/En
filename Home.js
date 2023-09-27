@@ -29,14 +29,9 @@ const HomeScreen = () => {
           },
           tabBarActiveTintColor: '#4D8D6E',
           tabBarInactiveTintColor: 'gray',
-          headerStyle: {
-            backgroundColor: '#EEEEEE',
-          },
-          tabBarStyle: {
-            backgroundColor: '#EEEEEE',
-          }
-        })}
-      >
+          headerShown: false
+        })
+      }>
         <Tab.Screen name="Profile" component={PROFILE} />
         <Tab.Screen name="Friends" component={FRIEND} />
         <Tab.Screen name="Books" component={PROFILE} />
