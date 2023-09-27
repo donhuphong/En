@@ -5,7 +5,7 @@ const SIGN_IN = 'SIGN_IN';
 const GET_START = 'GET_START';
 const windownWidth = Dimensions.get('window').width;
 
-const E_LOGIN = () => {
+const E_LOGIN = ({navigation}) => {
   const [page, setPage] = useState(SIGN_IN);
   return (
     <View style={{ width: '100%', height: '100%', alignItems: 'center' }}>
@@ -14,7 +14,7 @@ const E_LOGIN = () => {
       </View>
 
       <View style={{ height: '40%', width: '100%', backgroundColor: '#F5F5F5F5' }}>
-        {page === SIGN_IN ? <E_BODY /> : null}
+        {page === SIGN_IN ? <E_BODY navigation={navigation} /> : <E_STARTED />}
       </View>
 
       <View style={{ flex: 1, height: '40%', width: '100%', backgroundColor: '#F5F5F5F5' }}>
@@ -56,18 +56,32 @@ const E_HEADER = ({ page, setPage }) => {
   );
 };
 
-const E_BODY = () => {
+const E_BODY = ({navigation}) => {
   const [pwHidden, setPwdHidden] = useState(true);
+  const [account, setAccount] = useState({
+    username: 'username',
+    password: 'password'
+  });
+
+  _handleError = () => {
+    if (account.username === account.password) {
+      console.log("success " + account.username + " | " + account.password);
+      navigation.navigate('Home');
+    } else {
+      console.log("failed " + account.username + " | " + account.password);
+    }
+  };
+
   return (
     <View style={{ height: '100%', width: '100%', justifyContent: 'center' }}>
       <Text style={style.textHeader}>Login in your Account</Text>
       <View style={style.input}>
         <Image source={require('../signin/images/mail.png')} resizeMode='stretch' style={style.image} />
-        <TextInput style={style.textInput} autoCapitalize='none' placeholder='E-mail' />
+        <TextInput style={style.textInput} autoCapitalize='none' placeholder='E-mail' onChangeText={(value) => setAccount({ ...account, username: value })} />
       </View>
       <View style={style.input}>
         <Image source={require('../signin/images/password.png')} resizeMode='stretch' style={style.image} />
-        <TextInput style={style.textInput} autoCapitalize='none' secureTextEntry={pwHidden} placeholder='Password' textContentType='password' />
+        <TextInput style={style.textInput} autoCapitalize='none' secureTextEntry={pwHidden} placeholder='Password' textContentType='password' onChangeText={(value) => setAccount({ ...account, password: value })} />
         <TouchableOpacity style={{ height: '100%', justifyContent: 'center' }}
           onPress={() => setPwdHidden(!pwHidden)}
         >
@@ -78,7 +92,8 @@ const E_BODY = () => {
         <Text style={{ color: '#707070', position: 'absolute', right: 0 }}>Forget password ?</Text>
       </View>
       <View style={style.inputBE}>
-        <TouchableOpacity style={{ height: 45, width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#4D8D6E', borderRadius: 100 }}>
+        <TouchableOpacity style={{ height: 45, width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#4D8D6E', borderRadius: 100 }}
+          onPress={() => this._handleError()}>
           <Text style={{ color: 'white', fontSize: 20 }}>Login</Text>
         </TouchableOpacity>
       </View>
@@ -86,10 +101,55 @@ const E_BODY = () => {
   );
 };
 
+const E_STARTED = () => {
+  const [pwHiddenStarted, setPwdHiddenStarted] = useState(true);
+  const [input, setInput] = useState({
+    username: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  return (
+    <View style={{ height: '100%', width: '100%', justifyContent: 'center' }}>
+      <Text style={style.textHeader}>Resgiter Account for wasty</Text>
+      <View style={style.input}>
+        <Image source={require('../signin/images/mail.png')} resizeMode='stretch' style={style.image} />
+        <TextInput style={style.textInput} autoCapitalize='none' placeholder='E-mail' />
+      </View>
+      <View style={style.input}>
+        <Image source={require('../signin/images/password.png')} resizeMode='stretch' style={style.image} />
+        <TextInput style={style.textInput} autoCapitalize='none' secureTextEntry={pwHiddenStarted} placeholder='Password' textContentType='password' />
+        <TouchableOpacity style={{ height: '100%', justifyContent: 'center' }}
+          onPress={() => setPwdHiddenStarted(!pwHiddenStarted)}
+        >
+          <Image source={require('../signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
+        </TouchableOpacity>
+      </View>
+
+      <View style={style.input}>
+        <Image source={require('../signin/images/password.png')} resizeMode='stretch' style={style.image} />
+        <TextInput style={style.textInput} autoCapitalize='none' secureTextEntry={pwHiddenStarted} placeholder='Confirm password' textContentType='password' />
+        <TouchableOpacity style={{ height: '100%', justifyContent: 'center' }}
+          onPress={() => setPwdHiddenStarted(!pwHiddenStarted)}
+        >
+          <Image source={require('../signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
+        </TouchableOpacity>
+      </View>
+
+      <View style={style.inputBE}>
+        <TouchableOpacity style={{ height: 45, width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#4D8D6E', borderRadius: 100 }}>
+          <Text style={{ color: 'white', fontSize: 20 }}>Create</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+
 const FOOTER = () => {
   return (
     <View style={{ width: '100%', height: '100%', alignItems: 'center' }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginLeft: '30' }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginLeft: 30 }}>
         <View style={{ height: 1, width: '25%', backgroundColor: '#4D8D6E' }}>
         </View>
         <Text style={{ color: '#4D8D6E', fontSize: 15 }}>  or connect with  </Text>
