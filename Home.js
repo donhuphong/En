@@ -3,8 +3,9 @@ import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import PROFILE from './Profile';
-import HOME_PAGE from './Backg';
+import PROFILE from './page/Profile';
+import HOME_PAGE from './page/Backg';
+import FRIEND from './page/Friends';
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
@@ -37,7 +38,7 @@ const HomeScreen = () => {
         })}
       >
         <Tab.Screen name="Profile" component={PROFILE} />
-        <Tab.Screen name="Friends" component={PROFILE} />
+        <Tab.Screen name="Friends" component={FRIEND} />
         <Tab.Screen name="Books" component={PROFILE} />
         <Tab.Screen name="Collection" component={HOME_PAGE} />
       </Tab.Navigator>
