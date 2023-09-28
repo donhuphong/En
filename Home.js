@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import PROFILE from './page/Profile';
 import HOME_PAGE from './page/Backg';
 import FRIEND from './page/Friends';
+import NOTIFICATION from './page/Noification'
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
@@ -24,6 +25,8 @@ const HomeScreen = () => {
               iconName = focused ? 'book' : 'book-outline';
             } else if (route.name === 'Friends') {
               iconName = focused ? 'people' : 'people-outline';
+            } else if (route.name === 'Notification'){
+              iconName = focused ? 'notifications' : 'notifications-outline';
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -35,6 +38,7 @@ const HomeScreen = () => {
         <Tab.Screen name="Profile" component={PROFILE} />
         <Tab.Screen name="Friends" component={FRIEND} />
         <Tab.Screen name="Books" component={PROFILE} />
+        <Tab.Screen name="Notification" component={NOTIFICATION} />
         <Tab.Screen name="Collection" component={HOME_PAGE} />
       </Tab.Navigator>
     </NavigationContainer>

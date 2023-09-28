@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions, TextInput, SafeAreaView, ScrollView, Image } from 'react-native';
 import { SearchBar } from '@rneui/themed';
+// import faker from 'faker';
 const windownWidth = Dimensions.get('window').width;
 const FRIEND = () => {
   const [searchText, setSearchText] = useState();
@@ -11,9 +12,9 @@ const FRIEND = () => {
 
         <View style={{ width: '100%', height: '10%', flexDirection: 'row' }}>
           <View style={{ width: '30%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{color:'#4D8D6E', fontSize:30}}>wasty</Text>
+            <Text style={{ color: '#4D8D6E', fontSize: 30 }}>wasty</Text>
           </View>
-          <View style={{ width: '70%', height: '100%', justifyContent: 'center', alignItems: 'flex-start'}}>
+          <View style={{ width: '70%', height: '100%', justifyContent: 'center', alignItems: 'flex-start' }}>
             <TextInput style={{
               height: '50%',
               width: '85%',
@@ -54,7 +55,14 @@ const COLLECTION_F = () => {
             shadowRadius: 3,
             flexDirection: 'row'
           }}>
-            <View style={{ width: 70, borderWidth: 1, borderColor: '#CCCCCC', borderRadius: 10 }}></View>
+            <View style={{ width: 70, borderWidth: 1, borderColor: '#CCCCCC', borderRadius: 10 }}>
+              <Image source={{ uri: friend.ava }} style={{
+                resizeMode: 'stretch', // Options: 'cover', 'contain', 'stretch', 'center'
+                width: '100%',
+                height: '100%',
+                borderRadius: 8
+              }}></Image>
+            </View>
             <View style={{ width: '90%' }}>
               <Text style={{ fontSize: 20, marginLeft: 20, color: '#4D8D6E' }}>{friend.name}</Text>
               <Text style={{ fontSize: 15, marginLeft: 20, color: 'gray' }}>{friend.date}</Text>
@@ -110,6 +118,7 @@ const friends = [
     phone: '0937450071',
     address: 'Hồ Chí Minh',
     date: '19-02-1995',
+    ava: 'https://images.viblo.asia/avatar/ff71c025-cbce-4433-8a13-3279ad1c9751.jpg',
   },
   {
     id: 2,
