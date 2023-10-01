@@ -7,6 +7,7 @@ import PROFILE from './page/Profile';
 import HOME_PAGE from './page/Backg';
 import FRIEND from './page/Friends';
 import NOTIFICATION from './page/Noification'
+import MyPDFViewer from './page/Book'
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
@@ -37,7 +38,7 @@ const HomeScreen = () => {
       }>
         <Tab.Screen name="Profile" component={PROFILE} />
         <Tab.Screen name="Friends" component={FRIEND} />
-        <Tab.Screen name="Books" component={PROFILE} />
+        <Tab.Screen name="Books" component={MyPDFViewer} />
         <Tab.Screen name="Notification" component={NOTIFICATION} />
         <Tab.Screen name="Collection" component={HOME_PAGE} />
       </Tab.Navigator>
