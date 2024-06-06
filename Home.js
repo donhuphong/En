@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator();
 const HomeScreen = () => {
   return (
     <NavigationContainer independent={true}>
-      <Tab.Navigator
+      <Tab.Navigator initialRouteName="Profile"
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;

@@ -63,7 +63,7 @@ const E_BODY = ({navigation}) => {
     password: 'password'
   });
 
-  _handleError = () => {
+  const _handleError = () => {
     if (account.username === account.password) {
       console.log("success " + account.username + " | " + account.password);
       navigation.navigate('Home');
@@ -93,7 +93,7 @@ const E_BODY = ({navigation}) => {
       </View>
       <View style={style.inputBE}>
         <TouchableOpacity style={{ height: 45, width: '100%', justifyContent: 'center', alignItems: 'center', backgroundColor: '#4D8D6E', borderRadius: 100 }}
-          onPress={() => this._handleError()}>
+          onPress={() => _handleError()}>
           <Text style={{ color: 'white', fontSize: 20 }}>Login</Text>
         </TouchableOpacity>
       </View>
@@ -145,7 +145,7 @@ const E_STARTED = () => {
   );
 };
 
-
+// choose sign by thirdParty
 const FOOTER = () => {
   return (
     <View style={{ width: '100%', height: '100%', alignItems: 'center' }}>
@@ -195,11 +195,6 @@ const style = StyleSheet.create({
     fontSize: 20,
     fontWeight: '400',
     color: '#4D8D6E',
-  },
-  textLarge: {
-    fontSize: 40,
-    fontWeight: '800',
-    color: 'white'
   },
   textHeader: {
     marginLeft: '10%',
