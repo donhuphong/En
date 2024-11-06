@@ -22,11 +22,11 @@ const SplashScreen = () => {
         const userKey = await AsyncStorage.getItem("user_id")
         console.log("userKey: " + userKey);
 
-      if (userKey !== null) {
-        // Sau khi sử dụng xong user_id, xóa nó nhu token expire
-        await AsyncStorage.removeItem("user_id");
-        console.log("user_id đã được xóa");
-      }
+        if (userKey !== null) {
+          // Sau khi sử dụng xong user_id, xóa nó nhu token expire
+          await AsyncStorage.removeItem("user_id");
+          console.log("user_id đã được xóa");
+        }
 
         navigation.navigate(userKey === null ? "Auth" : "DrawerNavigationRoutes")
         // navigation.navigate("DrawerNavigationRoutes")
