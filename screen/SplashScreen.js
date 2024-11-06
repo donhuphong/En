@@ -21,8 +21,15 @@ const SplashScreen = () => {
       try {
         const userKey = await AsyncStorage.getItem("user_id")
         console.log("userKey: " + userKey);
-        // navigation.navigate(userKey === null ? "Auth" : "DrawerNavigationRoutes")
-        navigation.navigate("DrawerNavigationRoutes")
+
+      if (userKey !== null) {
+        // Sau khi sử dụng xong user_id, xóa nó nhu token expire
+        await AsyncStorage.removeItem("user_id");
+        console.log("user_id đã được xóa");
+      }
+
+        navigation.navigate(userKey === null ? "Auth" : "DrawerNavigationRoutes")
+        // navigation.navigate("DrawerNavigationRoutes")
       } catch (error) {
         console.log("get userKey error" + error);
         navigation.navigate("Auth")

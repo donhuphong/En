@@ -1,10 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "./signin/ELogin";
-import SplashScreen from "./Screen/SplashScreen";
-import DrawerNavigationRoutes from "./Screen/DrawerNavigationRoutes"
 
+import SplashScreen from "./Screen/SplashScreen";
+import DrawerNavigationRoutes from "./Screen/DrawerNavigationRoutes";
+import LoginScreen from "./Screen/LoginScreen";
+import RegisterScreen from "./Screen/RegisterScreen";
 const Stack = createNativeStackNavigator();
 
 const Auth = () => {
@@ -13,8 +14,10 @@ const Auth = () => {
       initialRouteName="LoginScreen"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="RegisterScreen" component={LoginScreen} />
+      <Stack.Screen
+        name="LoginScreen"
+        component={LoginScreen} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} /> 
     </Stack.Navigator>
   );
 };
@@ -23,7 +26,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen">
-         {/* SplashScreen which will come once for 5 Seconds */}
+        {/* SplashScreen which will come once for 5 Seconds */}
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
