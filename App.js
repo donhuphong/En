@@ -2,7 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./signin/ELogin";
-import HomeScreen from "./Home";
+import SplashScreen from "./Screen/SplashScreen";
+import DrawerNavigationRoutes from "./Screen/DrawerNavigationRoutes"
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +23,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen">
-        {/* qc 5 giay */}
+         {/* SplashScreen which will come once for 5 Seconds */}
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}

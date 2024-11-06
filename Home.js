@@ -4,11 +4,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 // Import các màn hình
-import ProfilePage from "./page/Profile";
-import HomePage from "./page/Backg";
-import FriendsPage from "./page/Friends";
-import NotificationsPage from "./page/Noification";
-import BooksPage from "./page/Book";
+import ProfilePage from "./Screen/Components/Profile";
+import HomePage from "./Screen/Components/Backg";
+import FriendsPage from "./Screen/Components/Friends";
+import NotificationsPage from "./Screen/Components/Noification";
+import BooksPage from "./Screen/Components/Book";
 
 // Khởi tạo Tab Navigator
 const Tab = createBottomTabNavigator();
