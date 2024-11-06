@@ -64,7 +64,7 @@ const E_BODY = ({navigation}) => {
   });
 
   const _handleError = () => {
-    if (account.username === account.password) {
+    if (account.username === account.password || account.username === '') {
       console.log("success " + account.username + " | " + account.password);
       navigation.navigate('Home');
     } else {
