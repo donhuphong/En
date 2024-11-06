@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View,Image, Modal, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Image, Modal, ActivityIndicator } from 'react-native';
 
 const Loader = (props) => {
     const { loading, ...attributes } = props;
@@ -12,11 +12,8 @@ const Loader = (props) => {
             onRequestClose={() => {
                 console.log('close modal');
             }}>
-
-           
-
             <View style={styles.modalBackground}>
-                 {/* ....loading */}
+                {/* ....loading */}
 
                 <View style={styles.loaderContainer}>
                     <Image
@@ -24,7 +21,7 @@ const Loader = (props) => {
                         style={styles.loaderImage}
                     />
                 </View>
-{/* 
+                {/* 
                 <View style={styles.activityIndicatorWrapper}>
                     <ActivityIndicator
                         animating={true}
