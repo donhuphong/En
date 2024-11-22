@@ -40,7 +40,7 @@ const SplashScreen = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../Images/aboutreact.png')}
+        source={require('./Images/aboutreact.png')}
         style={styles.image}
       />
       <ActivityIndicator

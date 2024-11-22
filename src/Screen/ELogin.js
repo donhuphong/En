@@ -76,16 +76,16 @@ const E_BODY = ({navigation}) => {
     <View style={{ height: '100%', width: '100%', justifyContent: 'center' }}>
       <Text style={style.textHeader}>Login in your Account</Text>
       <View style={style.input}>
-        <Image source={require('../signin/images/mail.png')} resizeMode='stretch' style={style.image} />
+        <Image source={require('./signin/images/mail.png')} resizeMode='stretch' style={style.image} />
         <TextInput style={style.textInput} autoCapitalize='none' placeholder='E-mail' onChangeText={(value) => setAccount({ ...account, username: value })} />
       </View>
       <View style={style.input}>
-        <Image source={require('../signin/images/password.png')} resizeMode='stretch' style={style.image} />
+        <Image source={require('./signin/images/password.png')} resizeMode='stretch' style={style.image} />
         <TextInput style={style.textInput} autoCapitalize='none' secureTextEntry={pwHidden} placeholder='Password' textContentType='password' onChangeText={(value) => setAccount({ ...account, password: value })} />
         <TouchableOpacity style={{ height: '100%', justifyContent: 'center' }}
           onPress={() => setPwdHidden(!pwHidden)}
         >
-          <Image source={require('../signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
+          <Image source={require('./signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
         </TouchableOpacity>
       </View>
       <View style={style.forgetPass}>
@@ -113,26 +113,26 @@ const E_STARTED = () => {
     <View style={{ height: '100%', width: '100%', justifyContent: 'center' }}>
       <Text style={style.textHeader}>Resgiter Account for wasty</Text>
       <View style={style.input}>
-        <Image source={require('../signin/images/mail.png')} resizeMode='stretch' style={style.image} />
+        <Image source={require('./signin/images/mail.png')} resizeMode='stretch' style={style.image} />
         <TextInput style={style.textInput} autoCapitalize='none' placeholder='E-mail' />
       </View>
       <View style={style.input}>
-        <Image source={require('../signin/images/password.png')} resizeMode='stretch' style={style.image} />
+        <Image source={require('./signin/images/password.png')} resizeMode='stretch' style={style.image} />
         <TextInput style={style.textInput} autoCapitalize='none' secureTextEntry={pwHiddenStarted} placeholder='Password' textContentType='password' />
         <TouchableOpacity style={{ height: '100%', justifyContent: 'center' }}
           onPress={() => setPwdHiddenStarted(!pwHiddenStarted)}
         >
-          <Image source={require('../signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
+          <Image source={require('./signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
         </TouchableOpacity>
       </View>
 
       <View style={style.input}>
-        <Image source={require('../signin/images/password.png')} resizeMode='stretch' style={style.image} />
+        <Image source={require('./signin/images/password.png')} resizeMode='stretch' style={style.image} />
         <TextInput style={style.textInput} autoCapitalize='none' secureTextEntry={pwHiddenStarted} placeholder='Confirm password' textContentType='password' />
         <TouchableOpacity style={{ height: '100%', justifyContent: 'center' }}
           onPress={() => setPwdHiddenStarted(!pwHiddenStarted)}
         >
-          <Image source={require('../signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
+          <Image source={require('./signin/images/eye.png')} resizeMode='stretch' style={style.imageEye}></Image>
         </TouchableOpacity>
       </View>
 
@@ -158,12 +158,12 @@ const FOOTER = () => {
       </View>
 
       <View style={{ width: windownWidth, height: 70, marginLeft: 30, marginTop: 0, flexDirection: 'row' }}>
-        <Image source={require('../signin/images/googlebtn.png')} style={style.buttonSignWith}></Image>
+        <Image source={require('./signin/images/googlebtn.png')} style={style.buttonSignWith}></Image>
         <Image source={require('../signin/images/googlebtn.png')} style={style.buttonSignWith}></Image>
       </View>
       <View style={{ width: windownWidth, height: 70, marginLeft: 30, marginTop: 0, flexDirection: 'row' }}>
-        <Image source={require('../signin/images/googlebtn.png')} style={style.buttonSignWith}></Image>
-        <Image source={require('../signin/images/googlebtn.png')} style={style.buttonSignWith}></Image>
+        <Image source={require('./signin/images/googlebtn.png')} style={style.buttonSignWith}></Image>
+        <Image source={require('./signin/images/googlebtn.png')} style={style.buttonSignWith}></Image>
       </View>
     </View>
   );

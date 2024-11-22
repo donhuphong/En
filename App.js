@@ -2,10 +2,11 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import SplashScreen from "./Screen/SplashScreen";
-import DrawerNavigationRoutes from "./Screen/DrawerNavigationRoutes";
-import LoginScreen from "./Screen/LoginScreen";
-import RegisterScreen from "./Screen/RegisterScreen";
+import SplashScreen from "./src/Screen/SplashScreen";
+import DrawerNavigationRoutes from "./src/Screen/DrawerNavigationRoutes";
+import LoginScreen from "./src/Screen/LoginScreen";
+
+import RegisterScreen from "./src/Screen/RegisterScreen";
 const Stack = createNativeStackNavigator();
 
 const Auth = () => {
@@ -23,6 +24,7 @@ const Auth = () => {
 };
 
 function App() {
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen">
